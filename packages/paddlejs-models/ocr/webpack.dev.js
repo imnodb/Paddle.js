@@ -29,6 +29,12 @@ module.exports = {
     },
     module: {
         rules: [
+            // Handle our workers
+            {
+                test: /worker\.ts$/,
+                loader: 'worker-loader',
+                exclude: /node_modules/
+            },
             {
                 test: /\.ts$/,
                 loader: 'ts-loader',
