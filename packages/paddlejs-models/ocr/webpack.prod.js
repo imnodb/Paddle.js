@@ -19,6 +19,7 @@ module.exports = {
             {
                 test: /worker\.ts$/,
                 loader: 'worker-loader',
+                options: { inline: "fallback" },
                 exclude: /node_modules/
             },
             {
@@ -33,12 +34,15 @@ module.exports = {
             }
         ]
     },
+    optimization: {
+        minimize: false,
+    },
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'lib'),
         libraryTarget: 'umd',
         library: ['paddlejs', 'ocr'],
         globalObject: 'this',
-        publicPath: '/'
+        publicPath: 'https://activity.hdslb.com/'
     }
 };

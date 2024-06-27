@@ -331,7 +331,6 @@ async function initEvent() {
     });
 }
 async function recognizeEvent({ image: imageBitmap, canvasOutput }: { image: ImageBitmap, canvasOutput: boolean }) {
-    console.log(recognizeEvent, imageBitmap);
     if (canvasOutput) {
         const canvas = new OffscreenCanvas(1, 1);
         const res = await recognize(imageBitmap, { canvas: canvas });
